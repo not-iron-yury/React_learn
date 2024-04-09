@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  color: rgb(77, 77, 77);
+}
+
+.container {
+  max-width: 1030px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 130px;
+  height: 100%;
+  padding: 15px 25px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 2px;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.postList{
+  margin-bottom: 75px;
+}
+.posts {
+  padding: 50px 0;
+
+  &__title {
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: rgb(29, 29, 29);
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 50px;
+  }
+  &__list_title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 4px;
+    padding: 25px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.post {
+  &__title {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+}
+
+
+.form{
+  display: grid;
+  grid-template-columns: 1fr 3fr 155px;
+  gap: 30px;
+
+  input {
+    padding: 0 10px;
+    
+    &::placeholder {
+      color: grey;
+    }
+  }
+
+  
+}
