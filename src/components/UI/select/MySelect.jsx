@@ -1,9 +1,8 @@
-
 const MySelect = ({optionsList, defaultValue, value, sortPostList}) => {
 
   return (
     <select	
-			// value={value}
+			value={value}
 			onChange={e => sortPostList(e.target.value)}
 			style={{marginBottom: 15}}
 		>

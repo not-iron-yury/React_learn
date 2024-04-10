@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { Button } from "../buttons/Button" 
-import { MyInput } from "./MyInput" 
+import { useState } from "react";
+import { Button } from "../buttons/Button"; 
+import { MyInput } from "./MyInput";
 
-function MyForm ({posts, create}) {
+export function MyForm ({create}) {
   const [newPost, setNewPost] = useState({title: '', body: ''});
 
   const addNewPost = (event) => {
@@ -33,13 +33,10 @@ function MyForm ({posts, create}) {
         value={newPost.body}
         onChange={event => setNewPost({...newPost, body: event.target.value})}
         className="in_descr"
-        type="text"
+        type="text" 
         placeholder="Короткое описание"
-        id='2'
       />
-      <Button className="btn" onClick={addNewPost}>Добавить</Button>
+      <Button onClick={addNewPost}>Добавить</Button>
     </form>
   )
 }
-
-export default MyForm
