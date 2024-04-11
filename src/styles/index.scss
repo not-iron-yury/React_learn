@@ -19,9 +19,8 @@ body {
 }
 
 .btn {
-  width: 130px;
   height: 100%;
-  padding: 15px 25px;
+  padding: 15px 30px;
   color: red;
   border: 1px solid red;
   border-radius: 2px;
@@ -73,6 +72,10 @@ body {
 }
 
 .post {
+
+  &__content {
+    padding-right: 20px;
+  }
   &__title {
     font-size: 35px;
     margin-bottom: 10px;
