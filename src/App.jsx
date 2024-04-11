@@ -8,8 +8,9 @@ import { MyModal } from "./components/MyModal/MyModal";
 import { Button } from "./components/UI/buttons/Button";
 
 export function App() {
+  
 
-  const [posts, setPosts] = useState(myPosts);
+  const [posts, setPosts] = useState(myPosts.slice(0, 5));
   const [filter, setFilter] = useState({select: '', search: ''});
   const [modal, setModal] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.select, filter.search);
