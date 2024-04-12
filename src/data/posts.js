@@ -9,4 +9,9 @@
 
 export const myPosts = await fetch("https://jsonplaceholder.typicode.com/posts")
   .then(data => data.json());
-                  
+
+// export async function fetchPosts() {
+//   const myPosts = await fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then(data => data.json());
+//   return myPosts;
+// }
