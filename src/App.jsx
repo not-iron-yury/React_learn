@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { usePosts } from "./hooks/usePost"
-//import { myPosts } from "./data/posts"
 import { PostList } from "./components/PostList";
 import { PostFilter } from "./components/PostFilter";
 import { MyForm } from "./components/UI/form/MyForm";
@@ -15,14 +14,20 @@ export function App() {
   const [filter, setFilter] = useState({select: '', search: ''});
   const [modal, setModal] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.select, filter.search);
+  const [postsLoading, setPostsLoading] = useState(false);
   // ----------------------------------------------------- //
   useEffect(() => {
     fetchPosts();
   }, [])  
   
   async function fetchPosts() {
-    const posts = await PostsList.getAll();    
-    setPosts(posts.slice(0, 5));
+    setPostsLoading(true);
+    setTimeout(async () => {
+      const posts = await PostsList.getAll();    
+      setPosts(posts.slice(0, 5));
+      setPostsLoading(false);
+    }, 2000)
+
   }  
   // ----------------------------------------------------- // 
   const createPost = (newPost) => {
@@ -41,9 +46,8 @@ export function App() {
         </MyModal>
         <div className="container">
           <h1 className="posts__title">Список анонсов статей</h1>
-          {/* <Button onClick={fetchPosts}>Вывести список статей</Button> */}
           <PostFilter filter={filter} setFilter={setFilter} />
-          <PostList posts={sortedAndSearchedPosts} remove={removePost}/>
+          <PostList posts={sortedAndSearchedPosts} remove={removePost} postsLoading={postsLoading}/>
           <Button onClick={() => setModal(true)}>
             Добавить пост
           </Button>
