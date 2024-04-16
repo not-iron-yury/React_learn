@@ -67,7 +67,11 @@ export function App() {
           <Button onClick={() => setModal(true)}>
             Добавить пост
           </Button>
-          <MyPaginationList pagesArray={pagesArray} page={page} setPage={setPage} />
+          <MyPaginationList 
+            pagesArray={pagesArray}
+            page={page} 
+            setPage={setPage}
+          />
         </div>
       </div>
   )
