@@ -16,7 +16,7 @@ export function PostList ({posts, remove}) {
     <div className="postList">
       <ul className="posts__list">
         {posts.map((itm, index) => 
-          <PostItem key={itm.id} data={itm} number={index} remove={remove} />
+          <PostItem key={itm.id} data={itm} remove={remove} />
         )}
       </ul>
     </div>
