@@ -12,7 +12,7 @@ export const Header = () => {
         </Link>
         <nav>
           <Link to='/' className='nav__link'>Статьи</Link>
-          <Link to='/about' className='nav__link'>Статьи</Link>
+          <Link to='/about' className='nav__link'>О блоге</Link>
         </nav>
       </div>
     </header>

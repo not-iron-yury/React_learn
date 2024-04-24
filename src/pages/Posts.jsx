@@ -12,7 +12,9 @@ import { MyModal } from "../components/MyModal/MyModal";
 import { PostsList } from "../API/postsList";
 import { getPageCount} from "../utils/pagination";
 
-export function Pages() {
+
+
+export const Posts = () => {
 
   const [posts, setPosts] = useState([]);             // массив постов
   const [filter, setFilter] = useState({select: '', search: ''});
@@ -74,5 +76,3 @@ export function Pages() {
       </section>
   )
 }
-
-export default Pages
